@@ -1,0 +1,847 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AA Projects Construction Company | Cape Town</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            dark: '#18181b',
+                            card: '#ffffff',
+                            bgLight: '#fafafa',
+                            border: '#e4e4e7',
+                            hover: '#f4f4f5',
+                            white: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4d4d8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a1a1aa;
+        }
+    </style>
+</head>
+<body class="bg-white text-black selection:bg-black selection:text-white">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="h-12 w-12 rounded-lg border border-black/20 overflow-hidden bg-black flex items-center justify-center p-0.5 group-hover:border-black transition-colors">
+                        <img src="https://i.postimg.cc/t4gQvpy5/308629847-156374267030245-5019031345839212950-n.jpg" 
+                             alt="AA Projects Logo" 
+                             class="h-full w-full object-cover rounded"
+                             onerror="this.src='https://placehold.co/100x100/000000/FFFFFF?text=AAP'">
+                    </div>
+                    <div>
+                        <span class="text-lg font-extrabold tracking-tight text-black block leading-tight">AA PROJECTS</span>
+                        <span class="text-xs text-neutral-500 font-semibold tracking-widest uppercase block">Construction Co.</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-xs font-bold tracking-wider uppercase">
+                    <a href="#about" class="text-neutral-700 hover:text-black transition-colors">ABOUT</a>
+                    <a href="#services" class="text-neutral-700 hover:text-black transition-colors">SERVICES</a>
+                    <a href="#gallery" class="text-neutral-700 hover:text-black transition-colors">PROJECTS</a>
+                    <a href="#hours" class="text-neutral-700 hover:text-black transition-colors">HOURS</a>
+                    <a href="#quote" class="text-neutral-700 hover:text-black transition-colors">ESTIMATE</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="tel:0828543170" class="flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 border-black text-black hover:bg-black hover:text-white font-bold text-xs transition-all duration-200">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                        <span>082 854 3170</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg border border-neutral-300 text-black hover:bg-neutral-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-neutral-200 bg-white">
+            <div class="px-4 pt-2 pb-6 space-y-3">
+                <a href="#about" class="block py-2 text-sm font-bold text-neutral-800 hover:text-black">About Us</a>
+                <a href="#services" class="block py-2 text-sm font-bold text-neutral-800 hover:text-black">Services</a>
+                <a href="#gallery" class="block py-2 text-sm font-bold text-neutral-800 hover:text-black">Portfolio Gallery</a>
+                <a href="#hours" class="block py-2 text-sm font-bold text-neutral-800 hover:text-black">Hours & Info</a>
+                <a href="#quote" class="block py-2 text-sm font-bold text-neutral-800 hover:text-black">Quote Calculator</a>
+                <div class="pt-4 border-t border-neutral-200">
+                    <a href="tel:0828543170" class="w-full flex items-center justify-center gap-2 py-3 bg-black text-white font-bold rounded-lg hover:bg-neutral-800 transition-colors">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Call 082 854 3170</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-16 lg:py-28 overflow-hidden border-b border-neutral-200 bg-neutral-50">
+        <!-- Subtle Grid Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Rating Badge -->
+                    <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-neutral-300 bg-white shadow-sm">
+                        <div class="flex text-black text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-neutral-700">5.0 Star Rated (6 Google Reviews)</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-black leading-tight uppercase">
+                        PREMIUM CONSTRUCTION & RENOVATION
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-neutral-600 max-w-2xl font-normal leading-relaxed">
+                        AA Projects Construction Company provides master craftsmanship, architectural refurbishments, and comprehensive home developments across Cape Town and surrounding regions.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#quote" class="px-8 py-4 bg-black text-white hover:bg-neutral-800 font-extrabold rounded-xl transition-all duration-200 shadow-md flex items-center gap-2">
+                            <span>Get Free Estimate</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#gallery" class="px-8 py-4 border-2 border-black text-black hover:bg-black hover:text-white font-bold rounded-xl transition-all duration-200">
+                            View Recent Projects
+                        </a>
+                    </div>
+
+                    <!-- Quick highlights -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-neutral-300">
+                        <div>
+                            <div class="text-2xl font-black text-black">100%</div>
+                            <div class="text-xs text-neutral-500 font-bold uppercase tracking-wider mt-1">Quality Guaranteed</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-black">Cape Town</div>
+                            <div class="text-xs text-neutral-500 font-bold uppercase tracking-wider mt-1">And Nearby Areas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-black">Full Service</div>
+                            <div class="text-xs text-neutral-500 font-bold uppercase tracking-wider mt-1">Interior & Exterior</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column / Image Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl border border-neutral-300 p-3 bg-white shadow-xl group">
+                        <div class="overflow-hidden rounded-xl aspect-[4/3] bg-neutral-200 relative">
+                            <img src="https://i.postimg.cc/mgKX3srC/625078152-871184285549236-5194003615689346068-n.webp" 
+                                 alt="Featured Renovation Work" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 grayscale contrast-125 group-hover:grayscale-0"
+                                 onerror="this.src='https://placehold.co/600x450/000000/FFFFFF?text=AA+Projects+Work'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-300 block">Featured Project</span>
+                                <h3 class="text-base font-extrabold">Custom Interior Carpentry & Joinery</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 border-b border-neutral-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-xs font-extrabold uppercase tracking-widest text-neutral-500 mb-2">OUR EXPERTISE</h2>
+                <p class="text-3xl sm:text-4xl font-black text-black tracking-tight uppercase">Comprehensive Construction Services</p>
+                <div class="w-16 h-1 bg-black mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Search Filter Bar -->
+            <div class="max-w-md mx-auto mb-12">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400"></i>
+                    <input type="text" id="service-search" placeholder="Search services (e.g. Tiling, Drywall, Kitchen)..." 
+                           class="w-full bg-neutral-50 border-2 border-neutral-200 rounded-xl py-3.5 pl-12 pr-4 text-black placeholder-neutral-400 focus:outline-none focus:border-black transition-colors text-sm font-medium">
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Services Cards populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 border-b border-neutral-200 bg-neutral-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-neutral-500 mb-2">PROJECT SHOWCASE</h2>
+                    <p class="text-3xl sm:text-4xl font-black text-black tracking-tight uppercase">Recent Work Portfolio</p>
+                </div>
+                <p class="text-neutral-600 text-sm mt-4 md:mt-0 max-w-md font-medium">
+                    Explore high-resolution captures of our craftsmanship across Cape Town properties. Click any photo to inspect details.
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/mgKX3srC/625078152-871184285549236-5194003615689346068-n.webp', 'Bespoke Wardrobe & Joinery Fitting')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/mgKX3srC/625078152-871184285549236-5194003615689346068-n.webp" alt="Wardrobe Fitting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Custom Wardrobe & Storage</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/J4fZP4jQ/639574169-885435144124150-115070017532490924-n.webp', 'Interior Renovation & Finishing Work')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/J4fZP4jQ/639574169-885435144124150-115070017532490924-n.webp" alt="Interior Renovation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Interior Decorating & Paint</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/d3drKbYr/474253347-592876280046706-1975908061616525926-n.webp', 'Paving & Structural Exterior Improvements')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/d3drKbYr/474253347-592876280046706-1975908061616525926-n.webp" alt="Exterior Work" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Exterior Refurbishment</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/26LB4s3t/474687426-592870250047309-4832695429632590757-n.webp', 'Custom Tile Installation & Bathroom Craft')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/26LB4s3t/474687426-592870250047309-4832695429632590757-n.webp" alt="Tile Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Tile Work & Bathroom Fitting</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/pL093WjH/474624781-592870213380646-8845277830374307422-n.webp', 'Decking & Outdoor Living Structure')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/pL093WjH/474624781-592870213380646-8845277830374307422-n.webp" alt="Deck Construction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Deck Construction & Woodwork</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/66d8tLRt/474815151-592870236713977-5214988667801993144-n.webp', 'Concrete & Structural Foundation Work')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/66d8tLRt/474815151-592870236713977-5214988667801993144-n.webp" alt="Concrete Pouring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Concrete & Foundation Pouring</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Image 7 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/GmS2qM0y/474624113-592870273380640-5869212416570402780-n.webp', 'Drywall & Ceiling Installation')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/GmS2qM0y/474624113-592870273380640-5869212416570402780-n.webp" alt="Drywall Work" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Drywall Installation & Repair</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Image 8 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/fyKWXCjt/639620861-885436697457328-1991878990524496445-n.webp', 'Kitchen Remodelling & Fixture Assembly')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/fyKWXCjt/639620861-885436697457328-1991878990524496445-n.webp" alt="Kitchen Remodelling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Kitchen Remodelling</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Image 9 -->
+                <div class="gallery-item group relative bg-white border border-neutral-300 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="openLightbox('https://i.postimg.cc/6pSWdyR4/482085578-620083543992646-1283215185968940950-n.webp', 'Architectural Extensions & Home Addition')">
+                    <div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+                        <img src="https://i.postimg.cc/6pSWdyR4/482085578-620083543992646-1283215185968940950-n.webp" alt="Home Additions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale contrast-125 group-hover:grayscale-0">
+                    </div>
+                    <div class="p-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-bold text-black uppercase tracking-wide">Home Addition & Refurbishment</span>
+                        <i class="fa-solid fa-expand text-neutral-400 group-hover:text-black transition-colors"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quote Calculator Section -->
+    <section id="quote" class="py-20 border-b border-neutral-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-neutral-500">INSTANT ESTIMATE</h2>
+                    <p class="text-3xl font-black text-black tracking-tight uppercase">Project Cost Calculator</p>
+                    <p class="text-neutral-600 text-sm leading-relaxed">
+                        Use our simple estimator tool to calculate approximate baseline costs for your construction or remodeling project in Cape Town. Contact us directly for a final binding estimate.
+                    </p>
+                    
+                    <div class="p-6 rounded-2xl border border-neutral-200 bg-neutral-50 space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-black">Transparent Pricing</h4>
+                                <p class="text-xs text-neutral-600 mt-1">Calculated based on standard labor and standard high-grade material rates in South Africa.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 border-t border-neutral-200 pt-4">
+                            <div class="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-black">Need Custom Specs?</h4>
+                                <p class="text-xs text-neutral-600 mt-1">Call direct on <strong>082 854 3170</strong> to arrange an on-site evaluation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculator Form Card -->
+                <div class="lg:col-span-7 bg-neutral-50 border-2 border-neutral-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <form id="calc-form" onsubmit="handleQuoteSubmit(event)" class="space-y-6">
+                        <!-- Service Type Selection -->
+                        <div>
+                            <label class="block text-xs font-extrabold uppercase tracking-wider text-black mb-2">Select Primary Service</label>
+                            <select id="calc-service" class="w-full bg-white border border-neutral-300 rounded-xl p-3.5 text-black focus:outline-none focus:border-black text-sm font-medium">
+                                <option value="850">Bathroom Remodelling (est. R850/sqm base)</option>
+                                <option value="1200">Kitchen Remodelling (est. R1200/sqm base)</option>
+                                <option value="450">Tile Work Installation (est. R450/sqm base)</option>
+                                <option value="250">Drywall Installation / Repair (est. R250/sqm base)</option>
+                                <option value="1500">Home Addition / Construction (est. R1500/sqm base)</option>
+                                <option value="600">Deck Construction (est. R600/sqm base)</option>
+                                <option value="350">Exterior / Interior Painting (est. R350/sqm base)</option>
+                                <option value="500">Floor Fitting & Repair (est. R500/sqm base)</option>
+                            </select>
+                        </div>
+
+                        <!-- Estimated Area (Sqm) -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs font-extrabold uppercase tracking-wider text-black">Project Size / Area (sq meters)</label>
+                                <span id="area-display" class="text-sm font-mono text-black font-extrabold">25 m²</span>
+                            </div>
+                            <input type="range" id="calc-area" min="5" max="250" value="25" class="w-full accent-black bg-neutral-200 h-2 rounded-lg cursor-pointer">
+                        </div>
+
+                        <!-- Complexity Level -->
+                        <div>
+                            <label class="block text-xs font-extrabold uppercase tracking-wider text-black mb-2">Finish & Quality Tier</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <label class="border-2 border-neutral-200 bg-white rounded-xl p-3 text-center cursor-pointer hover:border-black transition-colors text-xs font-bold uppercase">
+                                    <input type="radio" name="complexity" value="1.0" checked class="hidden peer" onchange="updateEstimate()">
+                                    <span class="peer-checked:text-black peer-checked:font-extrabold text-neutral-500 block">Standard</span>
+                                </label>
+                                <label class="border-2 border-neutral-200 bg-white rounded-xl p-3 text-center cursor-pointer hover:border-black transition-colors text-xs font-bold uppercase">
+                                    <input type="radio" name="complexity" value="1.25" class="hidden peer" onchange="updateEstimate()">
+                                    <span class="peer-checked:text-black peer-checked:font-extrabold text-neutral-500 block">Premium</span>
+                                </label>
+                                <label class="border-2 border-neutral-200 bg-white rounded-xl p-3 text-center cursor-pointer hover:border-black transition-colors text-xs font-bold uppercase">
+                                    <input type="radio" name="complexity" value="1.5" class="hidden peer" onchange="updateEstimate()">
+                                    <span class="peer-checked:text-black peer-checked:font-extrabold text-neutral-500 block">Luxury</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Result Banner -->
+                        <div class="bg-black text-white rounded-xl p-5 flex items-center justify-between shadow-md">
+                            <div>
+                                <span class="text-xs uppercase text-neutral-400 font-bold tracking-wider block">Estimated Range</span>
+                                <span id="calc-result" class="text-2xl font-black font-mono text-white">R21,250 - R25,500</span>
+                            </div>
+                            <i class="fa-solid fa-coins text-2xl text-neutral-300"></i>
+                        </div>
+
+                        <!-- Contact Input Details -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" id="quote-name" placeholder="Your Full Name" required class="bg-white border border-neutral-300 rounded-xl p-3 text-sm text-black focus:outline-none focus:border-black font-medium">
+                            <input type="tel" id="quote-phone" placeholder="Phone Number" required class="bg-white border border-neutral-300 rounded-xl p-3 text-sm text-black focus:outline-none focus:border-black font-medium">
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-black text-white font-extrabold rounded-xl hover:bg-neutral-800 transition-colors uppercase tracking-wider text-xs shadow-lg">
+                            Submit Estimate Request
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours, Contact & Location Section -->
+    <section id="hours" class="py-20 border-b border-neutral-200 bg-neutral-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Business Hours Card -->
+                <div class="lg:col-span-5 bg-white border border-neutral-300 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center">
+                            <i class="fa-regular fa-clock text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-black">Working Hours</h3>
+                            <p class="text-xs text-neutral-500 font-medium">AA Projects Operating Schedule</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between py-2 border-b border-neutral-200">
+                            <span class="text-neutral-600 font-medium">Monday</span>
+                            <span class="font-bold text-black">8:00 am – 5:00 pm</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-neutral-200">
+                            <span class="text-neutral-600 font-medium">Tuesday</span>
+                            <span class="font-bold text-black">8:00 am – 5:00 pm</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-neutral-200">
+                            <span class="text-neutral-600 font-medium">Wednesday</span>
+                            <span class="font-bold text-black">8:00 am – 5:00 pm</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-neutral-200">
+                            <span class="text-neutral-600 font-medium">Thursday</span>
+                            <span class="font-bold text-black">8:00 am – 5:00 pm</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-neutral-200">
+                            <span class="text-neutral-600 font-medium">Friday</span>
+                            <span class="font-bold text-black">8:00 am – 4:00 pm</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-neutral-200">
+                            <span class="text-neutral-600 font-medium">Saturday</span>
+                            <span class="font-bold text-neutral-400">Closed</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span class="text-neutral-600 font-medium">Sunday</span>
+                            <span class="font-bold text-neutral-400">Closed</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-neutral-200">
+                        <a href="tel:0828543170" class="w-full flex items-center justify-center gap-3 py-3 border-2 border-black rounded-xl text-black font-bold hover:bg-black hover:text-white transition-all">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>082 854 3170</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact & Service Area Details -->
+                <div class="lg:col-span-7 flex flex-col justify-between space-y-8">
+                    <div>
+                        <h2 class="text-xs font-extrabold uppercase tracking-widest text-neutral-500 mb-2">SERVICE REGION</h2>
+                        <h3 class="text-3xl font-black text-black tracking-tight uppercase mb-4">Serving Cape Town & Surrounds</h3>
+                        <p class="text-neutral-600 leading-relaxed font-medium">
+                            We operate across the entire Greater Cape Town region, including Northern Suburbs, Southern Suburbs, Atlantic Seaboard, and nearby municipal areas.
+                        </p>
+                    </div>
+
+                    <!-- Map/Location visual placeholder -->
+                    <div class="rounded-2xl border border-neutral-300 bg-white p-6 relative shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-extrabold text-black">Cape Town, South Africa</h4>
+                                <p class="text-xs text-neutral-500 font-medium">Mobile On-Site Estimations & Builds</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                            <div class="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                                <i class="fa-solid fa-truck-front text-black mb-2"></i>
+                                <h5 class="text-sm font-bold text-black">Prompt On-Site Arrival</h5>
+                                <p class="text-xs text-neutral-600 mt-1">Fully equipped team for all site visits and evaluations.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                                <i class="fa-solid fa-shield-halved text-black mb-2"></i>
+                                <h5 class="text-sm font-bold text-black">Quality Assured</h5>
+                                <p class="text-xs text-neutral-600 mt-1">Comprehensive guarantees on all craftsmanship and materials.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating summary card -->
+                    <div class="p-6 rounded-2xl border border-neutral-300 bg-white flex items-center justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl font-black text-black">5.0</span>
+                                <div class="flex text-black text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-neutral-500 font-medium mt-1">Verified Google Reviews Rating</p>
+                        </div>
+                        <a href="#reviews" class="text-xs font-extrabold uppercase underline tracking-wider text-black hover:text-neutral-600">Read Reviews</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 border-b border-neutral-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="text-xs font-extrabold uppercase tracking-widest text-neutral-500 mb-2">TESTIMONIALS</h2>
+                <p class="text-3xl font-black text-black uppercase">What Our Clients Say</p>
+                <div class="w-16 h-1 bg-black mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-neutral-50 border border-neutral-200 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-black text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-700 text-sm leading-relaxed italic font-medium">
+                            "AA Projects remodeled our bathroom and installed new drywalls throughout the house. Extremely neat, punctual, and finished ahead of time."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-black uppercase tracking-wider">Cape Town Resident</span>
+                        <span class="text-xs text-neutral-500 font-semibold">Google Review</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-neutral-50 border border-neutral-200 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-black text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-700 text-sm leading-relaxed italic font-medium">
+                            "Highly recommended for tile installation and woodwork. Attention to detail is superb and their rates are fair."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-black uppercase tracking-wider">Home Owner</span>
+                        <span class="text-xs text-neutral-500 font-semibold">Google Review</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-neutral-50 border border-neutral-200 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-black text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-700 text-sm leading-relaxed italic font-medium">
+                            "Great experience from foundation pouring to final painting touches. AA Projects construction team is trustworthy and skilled."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-black uppercase tracking-wider">Property Manager</span>
+                        <span class="text-xs text-neutral-500 font-semibold">Google Review</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t border-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-neutral-800">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.postimg.cc/t4gQvpy5/308629847-156374267030245-5019031345839212950-n.jpg" 
+                             alt="AA Projects" class="h-10 w-10 rounded border border-white/30 object-cover"
+                             onerror="this.src='https://placehold.co/100x100/000000/FFFFFF?text=AAP'">
+                        <span class="text-lg font-black text-white tracking-tight">AA PROJECTS</span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-neutral-400 max-w-sm">
+                        AA Projects Construction Company delivering superior residential and commercial refurbishments, building additions, and maintenance solutions in Cape Town.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-extrabold uppercase tracking-widest text-white">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="text-neutral-400 hover:text-white transition-colors">All Construction Services</a></li>
+                        <li><a href="#gallery" class="text-neutral-400 hover:text-white transition-colors">Portfolio & Recent Works</a></li>
+                        <li><a href="#quote" class="text-neutral-400 hover:text-white transition-colors">Estimate Cost Calculator</a></li>
+                        <li><a href="#hours" class="text-neutral-400 hover:text-white transition-colors">Hours & Operation Info</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-xs font-extrabold uppercase tracking-widest text-white">Direct Contact</h4>
+                    <div class="text-xs space-y-2">
+                        <p class="text-white font-bold"><i class="fa-solid fa-phone mr-2 text-neutral-400"></i>082 854 3170</p>
+                        <p class="text-neutral-400"><i class="fa-solid fa-location-dot mr-2 text-neutral-400"></i>Cape Town & Nearby Areas</p>
+                        <p class="text-neutral-400"><i class="fa-solid fa-star mr-2 text-white"></i>5.0 Stars rated company</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-500">
+                <p>&copy; <span id="year"></span> AA Projects Construction Company. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0 font-bold uppercase tracking-wider">Monochrome Light Edition</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-4xl w-full bg-white border border-neutral-300 rounded-2xl overflow-hidden p-2 shadow-2xl" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-neutral-800 transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="aspect-[4/3] sm:aspect-[16/9] bg-neutral-100 rounded-xl overflow-hidden">
+                <img id="lightbox-img" src="" alt="Enlarged view" class="w-full h-full object-contain">
+            </div>
+            <div class="p-4 text-center">
+                <h4 id="lightbox-caption" class="text-sm font-extrabold text-black"></h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Modal -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-black text-white font-bold px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 border border-neutral-800">
+            <i class="fa-solid fa-circle-check text-lg text-white"></i>
+            <span id="toast-message" class="text-xs tracking-wide">Request Submitted Successfully!</span>
+        </div>
+    </div>
+
+    <script>
+        // Services Database extracted from image list
+        const servicesList = [
+            { name: "Accessory building construction", icon: "fa-house-chimney-medical", category: "Structural" },
+            { name: "Bathroom remodelling", icon: "fa-bath", category: "Renovation" },
+            { name: "Building construction", icon: "fa-helmet-safety", category: "Structural" },
+            { name: "Concrete construction", icon: "fa-cubes-stacked", category: "Masonry" },
+            { name: "Deck construction", icon: "fa-border-all", category: "Exterior" },
+            { name: "Drywall installation", icon: "fa-square-plus", category: "Interior" },
+            { name: "Drywall repair", icon: "fa-screwdriver-wrench", category: "Repair" },
+            { name: "Exterior painting", icon: "fa-paint-roller", category: "Finishing" },
+            { name: "Foundation pouring", icon: "fa-layer-group", category: "Structural" },
+            { name: "Gutter cleaning", icon: "fa-broom", category: "Maintenance" },
+            { name: "Home addition construction", icon: "fa-boxes-packing", category: "Structural" },
+            { name: "Home renovations", icon: "fa-house-laptop", category: "Renovation" },
+            { name: "Floor fitting", icon: "fa-rug", category: "Finishing" },
+            { name: "Flooring repair", icon: "fa-hammer", category: "Repair" },
+            { name: "Kitchen remodelling", icon: "fa-utensils", category: "Renovation" },
+            { name: "Interior decorating", icon: "fa-couch", category: "Finishing" },
+            { name: "Plumbing fixture installation", icon: "fa-faucet-drip", category: "Plumbing" },
+            { name: "Refurbishment", icon: "fa-arrows-rotate", category: "Renovation" },
+            { name: "Remodelling", icon: "fa-pen-ruler", category: "Renovation" },
+            { name: "Repairs and maintenance", icon: "fa-wrench", category: "Maintenance" },
+            { name: "Tile work installation", icon: "fa-border-top-left", category: "Finishing" },
+            { name: "Tile work replacement", icon: "fa-arrows-split-up-and-left", category: "Repair" },
+            { name: "TV mounting", icon: "fa-tv", category: "Interior" }
+        ];
+
+        // Render Services in Light Mode Styling
+        function renderServices(items) {
+            const container = document.getElementById('services-grid');
+            container.innerHTML = '';
+
+            items.forEach(service => {
+                const card = document.createElement('div');
+                card.className = "p-6 rounded-2xl bg-white border border-neutral-200 hover:border-black transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md";
+                card.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-neutral-100 border border-neutral-200 flex items-center justify-center text-black text-lg group-hover:bg-black group-hover:text-white transition-all">
+                            <i class="fa-solid ${service.icon}"></i>
+                        </div>
+                        <h3 class="text-base font-extrabold text-black group-hover:translate-x-1 transition-transform">${service.name}</h3>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between">
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-neutral-500">${service.category}</span>
+                        <a href="#quote" class="text-xs font-bold text-black flex items-center gap-1 group-hover:underline">
+                            <span>Request</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Search Filter Logic
+        document.getElementById('service-search').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = servicesList.filter(s => s.name.toLowerCase().includes(query) || s.category.toLowerCase().includes(query));
+            renderServices(filtered);
+        });
+
+        // Calculator Interactive Logic
+        const serviceSelect = document.getElementById('calc-service');
+        const areaInput = document.getElementById('calc-area');
+        const areaDisplay = document.getElementById('area-display');
+        const resultDisplay = document.getElementById('calc-result');
+
+        function updateEstimate() {
+            const baseRate = parseFloat(serviceSelect.value);
+            const sqm = parseFloat(areaInput.value);
+            const complexity = parseFloat(document.querySelector('input[name="complexity"]:checked').value);
+
+            areaDisplay.textContent = `${sqm} m²`;
+
+            const minCost = Math.round(baseRate * sqm * complexity);
+            const maxCost = Math.round(minCost * 1.2);
+
+            resultDisplay.textContent = `R${minCost.toLocaleString()} - R${maxCost.toLocaleString()}`;
+        }
+
+        serviceSelect.addEventListener('change', updateEstimate);
+        areaInput.addEventListener('input', updateEstimate);
+
+        // Lightbox Functions
+        function openLightbox(src, caption) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').textContent = caption;
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.getElementById('lightbox').classList.add('flex');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('lightbox').classList.remove('flex');
+        }
+
+        // Form Submit Handler
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('quote-name').value;
+
+            showToast(`Thank you, ${name}! Your estimate request was sent.`);
+            document.getElementById('calc-form').reset();
+            updateEstimate();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 4000);
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking nav links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Initialization
+        window.addEventListener('DOMContentLoaded', () => {
+            renderServices(servicesList);
+            updateEstimate();
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
+```
